@@ -51,13 +51,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='rule',
             name='disallowed',
-            field=models.ManyToManyField(to='....Url', blank=True, related_name='disallowed', verbose_name='disallowed', help_text='The URLs which are not allowed to be accessed by bots.'),
+            field=models.ManyToManyField(to='robots.Url', blank=True, related_name='disallowed', verbose_name='disallowed', help_text='The URLs which are not allowed to be accessed by bots.'),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name='rule',
             name='allowed',
-            field=models.ManyToManyField(to='....Url', blank=True, related_name='allowed', verbose_name='allowed', help_text='The URLs which are allowed to be accessed by bots.'),
+            field=models.ManyToManyField(to='robots.Url', blank=True, related_name='allowed', verbose_name='allowed', help_text='The URLs which are allowed to be accessed by bots.'),
             preserve_default=True,
         ),
     ]
