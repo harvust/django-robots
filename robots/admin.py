@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from robots.forms import RuleAdminForm
-from robots.models import Rule, Url
+from robots.models import Rule, Url, CustomDirective
 
 
 class RuleAdmin(admin.ModelAdmin):
@@ -25,3 +25,4 @@ class RuleAdmin(admin.ModelAdmin):
 
 admin.site.register(Url)
 admin.site.register(Rule, RuleAdmin)
+admin.site.register(CustomDirective)
