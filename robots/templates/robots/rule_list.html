@@ -9,3 +9,6 @@ Disallow:
 {% if host %}Host: {{ host }}{% endif %}
 {% for sitemap_url in sitemap_urls %}Sitemap: {{ sitemap_url }}
 {% endfor %}
+{% for directive in custom_directives %}
+{{ directive }}
+{% endfor %}

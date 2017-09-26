@@ -5,7 +5,7 @@ from django.views.decorators.cache import cache_page
 from django.views.generic import ListView
 
 from robots import settings
-from robots.models import Rule
+from robots.models import Rule, CustomDirective
 
 
 class RuleList(ListView):
@@ -68,6 +68,7 @@ class RuleList(ListView):
                 context['host'] = self.current_site.domain
         else:
             context['host'] = None
+        context['custom_directives'] = CustomDirective.objects.all()
         return context
 
     def render_to_response(self, context, **kwargs):

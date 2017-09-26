@@ -93,3 +93,18 @@ class Rule(models.Model):
     def disallowed_urls(self):
         return get_text_list(list(self.disallowed.all()), _('and'))
     disallowed_urls.short_description = _('disallowed')
+
+
+@python_2_unicode_compatible
+class CustomDirective(models.Model):
+    """
+    Defines a custom directive too include in the robots.txt
+    """
+    directive = models.CharField(_('directive'), max_length=255)
+
+    class Meta:
+        verbose_name = _('directive')
+        verbose_name_plural = _('directive')
+
+    def __str__(self):
+        return u("%s") % self.directive
